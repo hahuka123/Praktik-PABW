@@ -20,3 +20,4 @@ Topik halaman saya: Daftar buku yang sudah dibaca
 ## Catatan penggunaan AI
 
 Menggunakan inline suggestion AI.
+Menggunakan ai untuk push ke github.
