@@ -12,7 +12,7 @@
   Jangan menghapus komentar TODO sebelum bagian itu Anda kerjakan —
   komentar itu adalah daftar periksa Anda sendiri.
 -->
-<html>
+<html lang="id">
 <head>
   <title>Buku yang sudah saya baca</title>
   <!-- TODO B.1: tambahkan dua baris meta di bawah ini:
@@ -64,7 +64,7 @@
                 </tr>
                 <tr>
                   <td>2</td>
-                  <td><figure>
+                  <figure>
                     <img src="hujan.jpg" alt="Hujan" width="100">
                   </figure>
                   <td>Hujan</td>
@@ -73,7 +73,6 @@
                   <td>7</td>
                 </tr>
                 <tr>
-                </tr>
                   <td>3</td>
                   <td><figure>
                       <img src="negeri-di-ujung-tanduk.jpg" alt="Negeri Di Ujung Tanduk" width="100">
@@ -86,9 +85,11 @@
             </table>
           </section>
 
+
+       
           <section>
             <h2>Formulir Buku yang sudah saya baca</h2>
-            <form>
+            <form action="/simpan-buku" method="post">
               <label for="judul">Judul Buku:</label>
               <input type="text" id="judul" name="judul" required><br><br>
 
@@ -104,10 +105,8 @@
               <input type="submit" value="Kirim">
             </form>
           </section>
-     </main>
-
-
-      <section id="daftar-buku.html">
+  
+            <section id="daftar-buku.html">
       <h2>Laskar pelangi</h2>
       <figure>
         <img src="laskar-pelangi.jpg" alt="Laskar Pelangi" width="200">
@@ -142,6 +141,10 @@
       <p>Rating: 9/10</p>
       <p>Novel Negeri di Ujung Tanduk karya Tere Liye adalah cerita fiksi yang menceritakan tentang intrik politik, korupsi, dan bobroknya sistem demokrasi di Indonesia.</p>
     </section>
+
+     </main>
+
+    
 
     <!-- TODO D.1: di dalam section pertama, buat tabel data Anda.
          Wajib ada: <caption>, <thead>, <th scope="col">, dan minimal 3 baris data. -->

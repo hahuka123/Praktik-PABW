@@ -19,5 +19,4 @@ Topik halaman saya: Daftar buku yang sudah dibaca
  
 ## Catatan penggunaan AI
  
-Tulis bagian mana yang dibantu AI dan bagian mana yang Anda
-kerjakan sendiri, atau tulis: tidak memakai AI.
+Menggunakan inline suggestion AI
