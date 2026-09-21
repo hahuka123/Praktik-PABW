@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<!--
+  KERANGKA AWAL — Halaman Profil Saya
+  PABW 2026/2027 · Pertemuan 3
+
+  Cara pakai:
+  1. Salin berkas ini, ganti nama menjadi profil.html
+  2. Ganti setiap tulisan TODO dengan isi milik Anda SENDIRI
+  3. Simpan, lalu buka di peramban (F5 untuk memuat ulang)
+  4. Kerjakan berurutan mengikuti Lembar B, C, D, dan E pada worksheet
+
+  Jangan menghapus komentar TODO sebelum bagian itu Anda kerjakan —
+  komentar itu adalah daftar periksa Anda sendiri.
+-->
+<html>
+<head>
+  <title>Buku yang sudah saya baca</title>
+  <!-- TODO B.1: tambahkan dua baris meta di bawah ini:
+       <meta charset="...">
+       <meta name="viewport" content="...">  -->
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+  <!-- TODO C.1: buat <header> di sini.
+       Isinya: satu <h1> berisi judul halaman Anda.
+       Di dalamnya juga ada <nav> berisi 3 tautan ke bagian halaman. -->
+     <header>
+      <h1>Buku yang sudah saya baca</h1>
+      <nav>
+        <ul>
+          <li><a href="#daftar-buku.html">Laskar Pelangi</a></li>
+          <li><a href="#daftar-buku.html2">Hujan</a></li>
+          <li><a href="#daftar-buku.html3">Negeri Di Ujung Tanduk</a></li>
+        </ul>
+      </nav>
+
+  <!-- TODO C.2: buat <main> di sini sebagai pembungkus semua bagian isi.
+       Di dalamnya ada 2 <section>, masing-masing punya <h2> sendiri. -->
+     <main>
+          <section>
+            <h2>Daftar Buku</h2>
+            <table>
+              <caption>Daftar Buku yang sudah saya baca</caption>
+              <thead>
+                <tr>
+                  <th scope="col">No</th>
+                  <th scope="col">Judul Buku</th>
+                  <th scope="col">Penulis</th>
+                  <th scope="col">Tahun Selesai</th>
+                  <th scope="col">Rating</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td><figure>
+                    <img src="laskar-pelangi.jpg" alt="Laskar Pelangi" width="100">
+                  </figure> Laskar Pelangi</td>
+                  <td>Andrea Hirata</td>
+                  <td>2022</td>
+                  <td>8</td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td><figure>
+                    <img src="hujan.jpg" alt="Hujan" width="100">
+                  </figure>
+                  <td>Hujan</td>
+                  <td>Tere Liye</td>
+                  <td>2022</td>
+                  <td>7</td>
+                </tr>
+                <tr>
+                </tr>
+                  <td>3</td>
+                  <td><figure>
+                      <img src="negeri-di-ujung-tanduk.jpg" alt="Negeri Di Ujung Tanduk" width="100">
+                    </figure>Negeri Di Ujung Tanduk</td>
+                  <td>Tere Liye</td>
+                  <td>2022</td>
+                  <td>9</td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+
+          <section>
+            <h2>Formulir Buku yang sudah saya baca</h2>
+            <form>
+              <label for="judul">Judul Buku:</label>
+              <input type="text" id="judul" name="judul" required><br><br>
+
+              <label for="penulis">Penulis:</label>
+              <input type="text" id="penulis" name="penulis" required><br><br>
+
+              <label for="tahun">Tahun selesai:</label>
+              <input type="number" id="tahun" name="tahun" required><br><br>
+
+              <label for="rating">Rating:</label>
+              <input type="number" id="rating" name="rating" min="1" max="10" required><br><br>
+
+              <input type="submit" value="Kirim">
+            </form>
+          </section>
+     </main>
+
+
+      <section id="daftar-buku.html">
+      <h2>Laskar pelangi</h2>
+      <figure>
+        <img src="laskar-pelangi.jpg" alt="Laskar Pelangi" width="200">
+        <figcaption>Laskar Pelangi</figcaption>
+      </figure>
+      <p>Penulis: Andrea Hirata </p>
+      <p>Tahun selesai: 2022</p>
+      <p>Rating: 8/10</p>
+      <p>Laskar Pelangi karya Andrea Hirata menceritakan perjuangan 10 anak dari keluarga miskin di Desa Gantung, Belitung, untuk tetap bisa bersekolah</p>
+    </section>
+
+    <section id="daftar-buku.html2">
+      <h2>Hujan</h2>
+      <figure>
+        <img src="hujan.jpg" alt="Hujan" width="200">
+        <figcaption>Hujan</figcaption>
+      </figure>
+      <p>Penulis: Tere Liye </p>
+      <p>Tahun selesai: 2022</p>
+      <p>Rating: 7/10</p>
+      <p>Novel Hujan karya Tere Liye mengisahkan tentang perjuangan hidup, cinta, dan melupakan memori di tengah bencana alam dahsyat.</p>
+    </section>
+
+    <section id="daftar-buku.html3">
+      <h2>Negeri Di Ujung Tanduk</h2>
+      <figure>
+        <img src="negeri-di-ujung-tanduk.jpg" alt="Negeri Di Ujung Tanduk" width="200">
+        <figcaption>Negeri Di Ujung Tanduk</figcaption>
+      </figure>
+      <p>Penulis: Tere Liye </p>
+      <p>Tahun selesai: 2022</p>
+      <p>Rating: 9/10</p>
+      <p>Novel Negeri di Ujung Tanduk karya Tere Liye adalah cerita fiksi yang menceritakan tentang intrik politik, korupsi, dan bobroknya sistem demokrasi di Indonesia.</p>
+    </section>
+
+    <!-- TODO D.1: di dalam section pertama, buat tabel data Anda.
+         Wajib ada: <caption>, <thead>, <th scope="col">, dan minimal 3 baris data. -->
+
+    <!-- TODO E.1: di dalam section kedua, buat form Anda.
+         Wajib ada: minimal 3 kolom, setiap kolom punya <label for> yang
+         cocok dengan id input-nya, dan satu atribut validasi. -->
+
+  <!-- TODO C.3: buat <footer> di sini.
+       Isinya: nama Anda, NIM Anda, dan tahun. -->
+     <footer>
+      <p>Nama: Hanif Huwaidi Kadzim</p>
+      <p>NIM: 25523173</p>
+      <p>Tahun: 2025</p>
+     </footer>
+
+</body>
+</html>
