@@ -20,20 +20,23 @@ Topik halaman saya: Daftar buku yang sudah dibaca
 ## Pertemuan 4 — Design token halaman profil
 
 - Berkas gaya yang digunakan: token.css, base.css, layout.css, komponen.css, tema.css
-- Warna utama: #102A43 (biru navy), dipilih karena memberikan kesan bagus dan rapi.
+- Warna utama: #1D3A8C (biru), dipilih karena memberikan kesan bagus dan rapi.
 
 ### Token yang saya tetapkan
 
 | Token           | Nilai   | Untuk apa                  |
 | --------------- | ------- | -------------------------- |
-| --color-primary | #102A43 | tombol, tautan, penanda    |
+| --color-primary | #1D3A8C | tombol dan penanda halaman |
 | --color-fg      | #0F172A | warna teks utama           |
 | --color-bg      | #F8FAFC | latar halaman              |
 | --radius-md     | 0.5rem  | sudut tombol dan kartu     |
 | --space-4       | 1rem    | jarak standar antar elemen |
 
 Kriteria selesai saya: mengubah --color-primary di satu baris
-harus mengubah warna tombol, tautan, dan penanda halaman
+harus mengubah warna tombol dan penanda halaman
+
+Warna tautan navigasi diatur oleh `nav a` menggunakan `--color-fg`,
+sedangkan warna saat tautan diarahkan menggunakan `--blue-500`.
 
 ## Catatan penggunaan AI
 
