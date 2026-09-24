@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Buku yang Sudah Saya Baca</title>
-    <link rel="stylesheet" href="token.css" />
+    <link rel="stylesheet" href="tokens.css" />
     <link rel="stylesheet" href="base.css" />
     <link rel="stylesheet" href="layout.css" />
     <link rel="stylesheet" href="komponen.css" />
@@ -14,6 +14,8 @@
     <header>
       <div class="header-baris">
         <div>
+          <input type="checkbox" id="tema" class="pengalih-tema" />
+          <label for="tema" class="tombol-tema">Tema gelap / terang</label>
           <h1>Buku yang Sudah Saya Baca</h1>
           <p>Catatan singkat tentang buku, cerita, dan rating favorit saya.</p>
         </div>
@@ -170,6 +172,8 @@
               placeholder="1 sampai 10"
               required
             />
+
+            <p class="pesan-galat">Periksa kembali isian yang belum sesuai.</p>
 
             <button type="submit">Simpan Buku</button>
           </form>

@@ -20,12 +20,12 @@ nav ul {
 }
 
 nav a {
-  color: var(--color-fg);
+  color: var(--color-primary);
   text-decoration: none;
 }
 
 nav a:hover {
-  color: var(--blue-500);
+  color: var(--color-focus);
   text-decoration: underline;
 }
 
