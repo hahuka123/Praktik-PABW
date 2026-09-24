@@ -38,3 +38,4 @@ harus mengubah warna tombol, tautan, dan penanda halaman
 ## Catatan penggunaan AI
 
 Menggunakan inline suggestion AI.
+Menggunakan copilot AI.
