@@ -133,9 +133,9 @@ input:user-invalid {
 }
 
 .kartu_isi {
-  min-width: 0; /* cegah konten kartu memaksa melebar */
+  min-width: 0; 
 }
 
 .kartu_judul {
-  overflow-wrap: anywhere; /* pecah kata panjang supaya tidak melebar */
+  overflow-wrap: anywhere; 
 }

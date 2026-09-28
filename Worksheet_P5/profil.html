@@ -11,180 +11,189 @@
     <link rel="stylesheet" href="tema.css" />
   </head>
   <body>
-    <header>
-      <div class="page">
-        <div>
-          <input type="checkbox" id="tema" class="pengalih-tema" />
-          <label for="tema" class="tombol-tema">Tema gelap / terang</label>
-          <h1>Buku yang Sudah Saya Baca</h1>
-          <p>Catatan singkat tentang buku, cerita, dan rating favorit saya.</p>
+    <div class="page">
+      <header>
+        <div class="header-baris">
+          <div>
+            <input type="checkbox" id="tema" class="pengalih-tema" />
+            <label for="tema" class="tombol-tema">Tema gelap / terang</label>
+            <h1>Buku yang Sudah Saya Baca</h1>
+            <p>
+              Catatan singkat tentang buku, cerita, dan rating favorit saya.
+            </p>
+          </div>
+          <nav class="navbar" aria-label="Navigasi halaman">
+            <ul>
+              <li><a href="#daftar-buku">Daftar Buku</a></li>
+              <li><a href="#koleksi-buku">Koleksi</a></li>
+              <li><a href="#tambah-buku">Tambah Buku</a></li>
+            </ul>
+          </nav>
         </div>
-        <nav aria-label="Navigasi halaman">
-          <ul>
-            <li><a href="#daftar-buku">Daftar Buku</a></li>
-            <li><a href="#koleksi-buku">Koleksi</a></li>
-            <li><a href="#tambah-buku">Tambah Buku</a></li>
-          </ul>
-        </nav>
-      </div>
-    </header>
+      </header>
 
-    <main>
-      <section id="daftar-buku">
-        <div class="kartu">
-          <h2>Daftar Buku</h2>
-          <table>
-            <caption>
-              Buku yang sudah selesai dibaca
-            </caption>
-            <thead>
-              <tr>
-                <th scope="col">No</th>
-                <th scope="col">Judul Buku</th>
-                <th scope="col">Penulis</th>
-                <th scope="col">Tahun Selesai</th>
-                <th scope="col">Rating</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>1</td>
-                <td>Laskar Pelangi</td>
-                <td>Andrea Hirata</td>
-                <td>2022</td>
-                <td>8/10</td>
-              </tr>
-              <tr>
-                <td>2</td>
-                <td>Hujan</td>
-                <td>Tere Liye</td>
-                <td>2022</td>
-                <td>7/10</td>
-              </tr>
-              <tr>
-                <td>3</td>
-                <td>Negeri Di Ujung Tanduk</td>
-                <td>Tere Liye</td>
-                <td>2022</td>
-                <td>9/10</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </section>
+      <main class="isi">
+        <section class="utama" id="daftar-buku">
+          <div class="kartu">
+            <h2>Daftar Buku</h2>
+            <table>
+              <caption>
+                Buku yang sudah selesai dibaca
+              </caption>
+              <thead>
+                <tr>
+                  <th scope="col">No</th>
+                  <th scope="col">Judul Buku</th>
+                  <th scope="col">Penulis</th>
+                  <th scope="col">Tahun Selesai</th>
+                  <th scope="col">Rating</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>Laskar Pelangi</td>
+                  <td>Andrea Hirata</td>
+                  <td>2022</td>
+                  <td>8/10</td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>Hujan</td>
+                  <td>Tere Liye</td>
+                  <td>2022</td>
+                  <td>7/10</td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>Negeri Di Ujung Tanduk</td>
+                  <td>Tere Liye</td>
+                  <td>2022</td>
+                  <td>9/10</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+        <section id="koleksi-buku">
+          <h2>Koleksi Buku</h2>
+          <div class="galeri">
+            <article class="kartu kartu_isi">
+              <h3 class="kartu_judul">Laskar Pelangi</h3>
+              <figure>
+                <img
+                  src="laskar-pelangi.jpg"
+                  alt="Sampul buku Laskar Pelangi"
+                  width="200"
+                />
+                <figcaption>Laskar Pelangi</figcaption>
+              </figure>
+              <p>Penulis: Andrea Hirata</p>
+              <p>Tahun selesai: 2022</p>
+              <p>Rating: 8/10</p>
+              <p>
+                Perjuangan sepuluh anak dari keluarga sederhana di Belitung
+                untuk tetap bersekolah.
+              </p>
+            </article>
 
-      <section id="koleksi-buku">
-        <h2>Koleksi Buku</h2>
-        <div class="katalog">
-          <article class="kartu">
-            <h3>Laskar Pelangi</h3>
-            <figure>
-              <img
-                src="laskar-pelangi.jpg"
-                alt="Sampul buku Laskar Pelangi"
-                width="200"
+            <article class="kartu kartu_isi">
+              <h3 class="kartu_judul">Hujan</h3>
+              <figure>
+                <img src="hujan.jpg" alt="Sampul buku Hujan" width="200" />
+                <figcaption>Hujan</figcaption>
+              </figure>
+              <p>Penulis: Tere Liye</p>
+              <p>Tahun selesai: 2022</p>
+              <p>Rating: 7/10</p>
+              <p>
+                Kisah tentang perjuangan hidup, cinta, dan keberanian untuk
+                melupakan.
+              </p>
+            </article>
+
+            <article class="kartu kartu_isi">
+              <h3 class="kartu_judul">Negeri Di Ujung Tanduk</h3>
+              <figure>
+                <img
+                  src="negeri-di-ujung-tanduk.jpg"
+                  alt="Sampul buku Negeri Di Ujung Tanduk"
+                  width="200"
+                />
+                <figcaption>Negeri Di Ujung Tanduk</figcaption>
+              </figure>
+              <p>Penulis: Tere Liye</p>
+              <p>Tahun selesai: 2022</p>
+              <p>Rating: 9/10</p>
+              <p>
+                Novel penuh intrik politik, korupsi, dan perjuangan memperbaiki
+                demokrasi.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <aside
+          class="sisi"
+          id="tambah-buku"
+          aria-labelledby="judul-tambah-buku"
+        >
+          <div class="kartu">
+            <h2 id="judul-tambah-buku">Tambah Buku</h2>
+            <form class="form-kolom" action="/simpan-buku" method="post">
+              <label for="judul">Judul Buku</label>
+              <input
+                type="text"
+                id="judul"
+                name="judul"
+                placeholder="Masukkan judul buku"
+                required
               />
-              <figcaption>Laskar Pelangi</figcaption>
-            </figure>
-            <p>Penulis: Andrea Hirata</p>
-            <p>Tahun selesai: 2022</p>
-            <p>Rating: 8/10</p>
-            <p>
-              Perjuangan sepuluh anak dari keluarga sederhana di Belitung untuk
-              tetap bersekolah.
-            </p>
-          </article>
 
-          <article class="kartu">
-            <h3>Hujan</h3>
-            <figure>
-              <img src="hujan.jpg" alt="Sampul buku Hujan" width="200" />
-              <figcaption>Hujan</figcaption>
-            </figure>
-            <p>Penulis: Tere Liye</p>
-            <p>Tahun selesai: 2022</p>
-            <p>Rating: 7/10</p>
-            <p>
-              Kisah tentang perjuangan hidup, cinta, dan keberanian untuk
-              melupakan.
-            </p>
-          </article>
-
-          <article class="kartu">
-            <h3>Negeri Di Ujung Tanduk</h3>
-            <figure>
-              <img
-                src="negeri-di-ujung-tanduk.jpg"
-                alt="Sampul buku Negeri Di Ujung Tanduk"
-                width="200"
+              <label for="penulis">Penulis</label>
+              <input
+                type="text"
+                id="penulis"
+                name="penulis"
+                placeholder="Masukkan nama penulis"
+                required
               />
-              <figcaption>Negeri Di Ujung Tanduk</figcaption>
-            </figure>
-            <p>Penulis: Tere Liye</p>
-            <p>Tahun selesai: 2022</p>
-            <p>Rating: 9/10</p>
-            <p>
-              Novel penuh intrik politik, korupsi, dan perjuangan memperbaiki
-              demokrasi.
-            </p>
-          </article>
-        </div>
-      </section>
 
-      <section id="tambah-buku">
-        <div class="kartu">
-          <h2>Tambah Buku</h2>
-          <form class="form-kolom" action="/simpan-buku" method="post">
-            <label for="judul">Judul Buku</label>
-            <input
-              type="text"
-              id="judul"
-              name="judul"
-              placeholder="Masukkan judul buku"
-              required
-            />
+              <label for="tahun">Tahun Selesai</label>
+              <input
+                type="number"
+                id="tahun"
+                name="tahun"
+                placeholder="Contoh: 2024"
+                required
+              />
 
-            <label for="penulis">Penulis</label>
-            <input
-              type="text"
-              id="penulis"
-              name="penulis"
-              placeholder="Masukkan nama penulis"
-              required
-            />
+              <label for="rating">Rating</label>
+              <input
+                type="number"
+                id="rating"
+                name="rating"
+                min="1"
+                max="10"
+                placeholder="1 sampai 10"
+                required
+              />
 
-            <label for="tahun">Tahun Selesai</label>
-            <input
-              type="number"
-              id="tahun"
-              name="tahun"
-              placeholder="Contoh: 2024"
-              required
-            />
+              <p class="pesan-galat">
+                Periksa kembali isian yang belum sesuai.
+              </p>
 
-            <label for="rating">Rating</label>
-            <input
-              type="number"
-              id="rating"
-              name="rating"
-              min="1"
-              max="10"
-              placeholder="1 sampai 10"
-              required
-            />
+              <button type="submit">Simpan Buku</button>
+            </form>
+          </div>
+        </aside>
+      </main>
 
-            <p class="pesan-galat">Periksa kembali isian yang belum sesuai.</p>
-
-            <button type="submit">Simpan Buku</button>
-          </form>
-        </div>
-      </section>
-    </main>
-
-    <footer>
-      <p>Nama: Hanif Huwaidi Kadzim</p>
-      <p>NIM: 25523173</p>
-      <p>Tahun: 2025</p>
-    </footer>
+      <footer>
+        <p>Nama: Hanif Huwaidi Kadzim</p>
+        <p>NIM: 25523173</p>
+        <p>Tahun: 2025</p>
+      </footer>
+    </div>
   </body>
 </html>
