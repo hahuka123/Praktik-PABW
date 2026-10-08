@@ -42,3 +42,6 @@ sedangkan warna saat tautan diarahkan menggunakan `--color-focus`.
 
 Menggunakan AI untuk membantu merapikan struktur HTML, menyusun design token,
 dan menambahkan aturan tema serta validasi form.
+
+## Worksheet_P8 - App.js
+Menggunakan AI untuk mengecek kode yang di app.js sudah valid atau belum

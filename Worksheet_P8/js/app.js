@@ -6,12 +6,13 @@ const profil = {
 };
 
 const daftarProyek = [
-    {judul: "Halaman Profil", tahun:2026, selesai:true},
-    {judul: "Katalog Produk", tahun:2026, selesai:false},
-]
+  { judul: "Halaman Profil", tahun: 2026, selesai: true },
+  { judul: "Katalog Produk", tahun: 2026, selesai: false },
+];
 
 function buatPerkenalan(data) {
-  return `Halo, nama saya ${data.nama}. Saya seorang ${data.peran}. Saya memiliki keahlian dalam ${data.keahlian.join(", ")}. Saat ini, saya telah menyelesaikan ${data.jumlah_projek} projek.`;
+  return `Halo, nama saya ${data.nama}. Saya seorang ${data.peran}. Saya memiliki keahlian dalam ${data.keahlian.join(", ")}. 
+  Saat ini, saya telah menyelesaikan ${data.jumlah_projek} projek.`;
 }
 
 const formatkeahlian = (daftar) => daftar.join(". ");
@@ -25,10 +26,10 @@ console.table(daftarProyek);
 const selesai = daftarProyek.filter((proyek) => proyek.selesai);
 console.table(selesai);
 
-const katalog = daftarProyek.find((proyek) => proyek.judul === "Katalog Produk");
+const katalog = daftarProyek.find(
+  (proyek) => proyek.judul === "Katalog Produk",
+);
 console.log(katalog);
 
 const daftarjudul = daftarProyek.map((proyek) => proyek.judul);
 console.log(daftarjudul);
-
-
