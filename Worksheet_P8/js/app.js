@@ -27,3 +27,8 @@ console.table(selesai);
 
 const katalog = daftarProyek.find((proyek) => proyek.judul === "Katalog Produk");
 console.log(katalog);
+
+const daftarjudul = daftarProyek.map((proyek) => proyek.judul);
+console.log(daftarjudul);
+
+
