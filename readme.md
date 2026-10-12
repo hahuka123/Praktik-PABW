@@ -45,3 +45,6 @@ dan menambahkan aturan tema serta validasi form.
 
 ## Worksheet_P8 - App.js
 Menggunakan AI untuk mengecek kode yang di app.js sudah valid atau belum
+
+## Worksheet_P9 - dom.js
+menggunakan AI untuk mengecek jawaban worsheet dan validasi kode
