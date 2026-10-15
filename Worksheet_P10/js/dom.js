@@ -1,14 +1,13 @@
-import { daftarBuku } from "./app.js";
-
 const wadahDaftar = document.querySelector("#daftar");
 const wadahTabel = document.querySelector("#daftar-tabel");
 const pesanKosong = document.querySelector("#kosong");
+const muatPesan = document.querySelector("#muat");
 const filter = document.querySelector("#filter");
-const formBuku = document.querySelector("#form-buku");
-const pesanGalat = document.querySelector("#pesan-galat");
 
 let kategoriAktif = "semua";
+let dataSemuaBuku = [];
 
+// 1. Fungsi Pembantu Pembuat Elemen
 function buatElemen(tag, teks) {
   const elemen = document.createElement(tag);
   elemen.textContent = teks;
@@ -45,19 +44,11 @@ function buatKartu(buku) {
   return kartu;
 }
 
-function renderKoleksi() {
-  const bukuTerfilter =
-    kategoriAktif === "semua"
-      ? daftarBuku
-      : daftarBuku.filter((buku) => buku.penulis === kategoriAktif);
-
-  wadahDaftar.replaceChildren(...bukuTerfilter.map(buatKartu));
-  pesanKosong.hidden = bukuTerfilter.length > 0;
-}
-
-function renderTabel() {
+// 2. Rendering Tabel Daftar Buku
+function renderTabel(daftar = []) {
+  if (!wadahTabel) return;
   wadahTabel.replaceChildren(
-    ...daftarBuku.map((buku, indeks) => {
+    ...daftar.map((buku, indeks) => {
       const baris = document.createElement("tr");
       const nilai = [
         indeks + 1,
@@ -73,51 +64,64 @@ function renderTabel() {
   );
 }
 
-filter.addEventListener("click", (event) => {
-  const tombol = event.target.closest("button[data-kategori]");
-  if (!tombol || !filter.contains(tombol)) return;
+// 3. Rendering Kartu Koleksi Buku Berdasarkan Filter
+function terapkanFilter() {
+  if (!wadahDaftar) return;
 
-  kategoriAktif = tombol.dataset.kategori;
-  filter.querySelectorAll("button[data-kategori]").forEach((item) => {
-    const aktif = item === tombol;
-    item.classList.toggle("aktif", aktif);
-    item.setAttribute("aria-pressed", String(aktif));
-  });
+  const terfilter =
+    kategoriAktif === "semua"
+      ? dataSemuaBuku
+      : dataSemuaBuku.filter((buku) => buku.penulis === kategoriAktif);
 
-  renderKoleksi();
-});
+  wadahDaftar.textContent = "";
 
-formBuku.addEventListener("input", () => {
-  pesanGalat.textContent = "";
-  pesanGalat.classList.remove("tampil");
-});
-
-formBuku.addEventListener("submit", (event) => {
-  event.preventDefault();
-
-  const dataForm = new FormData(formBuku);
-  const judul = dataForm.get("judul").trim();
-  const penulis = dataForm.get("penulis").trim();
-
-  if (!judul || !penulis) {
-    pesanGalat.textContent = "Judul dan nama penulis tidak boleh kosong.";
-    pesanGalat.classList.add("tampil");
+  if (!terfilter || terfilter.length === 0) {
+    if (pesanKosong) {
+      pesanKosong.textContent = "Buku tidak ditemukan untuk kategori ini.";
+      pesanKosong.hidden = false;
+    }
     return;
   }
 
-  daftarBuku.push({
-    judul,
-    penulis,
-    tahun: Number(dataForm.get("tahun")),
-    rating: Number(dataForm.get("rating")),
+  if (pesanKosong) pesanKosong.hidden = true;
+
+  terfilter.forEach((buku) => {
+    wadahDaftar.append(buatKartu(buku));
   });
+}
 
-  formBuku.reset();
-  pesanGalat.textContent = "";
-  pesanGalat.classList.remove("tampil");
-  renderTabel();
-  renderKoleksi();
-});
+// 4. Listener Klik Tombol Filter
+if (filter) {
+  filter.addEventListener("click", (event) => {
+    const tombol = event.target.closest("button[data-kategori]");
+    if (!tombol || !filter.contains(tombol)) return;
 
-renderTabel();
-renderKoleksi();
+    kategoriAktif = tombol.dataset.kategori;
+    filter.querySelectorAll("button[data-kategori]").forEach((item) => {
+      const aktif = item === tombol;
+      item.classList.toggle("aktif", aktif);
+      item.setAttribute("aria-pressed", String(aktif));
+    });
+
+    terapkanFilter();
+  });
+}
+
+// 5. Fungsi Ekspor untuk Lembar D
+export function aturMemuat(sedangMemuat) {
+  if (muatPesan) {
+    muatPesan.hidden = !sedangMemuat;
+  }
+}
+
+export function tampilkanGalat(pesan) {
+  if (wadahDaftar) {
+    wadahDaftar.textContent = pesan;
+  }
+}
+
+export function render(daftar = []) {
+  dataSemuaBuku = daftar; // Simpan data dari API
+  renderTabel(daftar); // Tampilkan di tabel
+  terapkanFilter(); // Tampilkan di kartu koleksi
+}
