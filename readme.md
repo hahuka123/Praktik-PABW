@@ -48,3 +48,6 @@ Menggunakan AI untuk mengecek kode yang di app.js sudah valid atau belum
 
 ## Worksheet_P9 - dom.js
 menggunakan AI untuk mengecek jawaban worsheet dan validasi kode
+
+## Worksheet_P10 - api.js,app.js,proyek.json
+menggunakan AI untuk mengecek kode apakah sudah valid atau belum
