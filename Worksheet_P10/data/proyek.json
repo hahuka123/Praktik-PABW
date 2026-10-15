@@ -1,5 +1,6 @@
 [
   {
+    "id": 1,
     "judul": "Laskar Pelangi",
     "penulis": "Andrea Hirata",
     "tahun": 2022,
@@ -9,6 +10,7 @@
       "Perjuangan sepuluh anak dari keluarga sederhana di Belitung untuk tetap bersekolah."
   },
   {
+    "id": 2,
     "judul": "Hujan",
     "penulis": "Tere Liye",
     "tahun": 2022,
@@ -18,6 +20,7 @@
       "Kisah tentang perjuangan hidup, cinta, dan keberanian untuk melupakan."
   },
   {
+    "id": 3,
     "judul": "Negeri Di Ujung Tanduk",
     "penulis": "Tere Liye",
     "tahun": 2022,
