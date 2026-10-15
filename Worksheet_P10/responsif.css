@@ -1,0 +1,96 @@
+/* dasar: berlaku di semua lebar */
+.isi {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-4);
+}
+
+.galeri {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-4);
+}
+
+.header-baris {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
+
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+/* tablet: galeri dua kolom */
+@media (min-width: 48rem) {
+  .galeri {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* desktop: sidebar bersanding dengan konten */
+@media (min-width: 60rem) {
+  .isi {
+    grid-template-columns: 16rem minmax(0, 1fr);
+  }
+
+  .sisi {
+    grid-column: 1;
+  }
+
+  .utama {
+    grid-column: 2;
+  }
+
+  .galeri {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* gambar tidak melebihi wadahnya */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* tabel lebar dapat digulir sendiri */
+.table-wrap {
+  overflow-x: auto;
+}
+
+/* teks mengikuti ukuran huruf pengguna */
+p {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+@media (max-width: 59.9375rem) {
+  main.isi {
+    grid-template-columns: 1fr !important;
+  }
+
+  main.isi .sisi,
+  main.isi .utama {
+    grid-column: auto !important;
+  }
+}
+
+@media (max-width: 47.9375rem) {
+  .header-baris {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar {
+    width: 100%;
+  }
+
+  nav ul {
+    width: 100%;
+    justify-content: space-between;
+  }
+}
