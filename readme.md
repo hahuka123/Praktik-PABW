@@ -51,3 +51,6 @@ menggunakan AI untuk mengecek jawaban worsheet dan validasi kode
 
 ## Worksheet_P10 - api.js,app.js,proyek.json
 menggunakan AI untuk mengecek kode apakah sudah valid atau belum
+
+## Worksheet_P11 - state.js, events.js, data.js, dan perapihan file yang ada di folder js
+menggunakan AI untuk menganalisis dan menyusun format kode
