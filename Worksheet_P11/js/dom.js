@@ -1,24 +1,41 @@
+import { saring } from "./data.js";
+
 const wadahDaftar = document.querySelector("#daftar");
 const wadahTabel = document.querySelector("#daftar-tabel");
 const pesanKosong = document.querySelector("#kosong");
 const muatPesan = document.querySelector("#muat");
 const filter = document.querySelector("#filter");
 
-let kategoriAktif = "semua";
-let dataSemuaBuku = [];
-
-// 1. Fungsi Pembantu Pembuat Elemen
 function buatElemen(tag, teks) {
   const elemen = document.createElement(tag);
   elemen.textContent = teks;
   return elemen;
 }
 
-function buatKartu(buku) {
+export function buatKartu(buku, favorit = []) {
   const kartu = document.createElement("article");
   kartu.className = "kartu kartu_isi";
-  kartu.appendChild(buatElemen("h3", buku.judul));
-  kartu.lastElementChild.className = "kartu_judul";
+
+  const headerKartu = document.createElement("div");
+  headerKartu.style.display = "flex";
+  headerKartu.style.justifyContent = "space-between";
+  headerKartu.style.alignItems = "center";
+
+  const judul = buatElemen("h3", buku.judul);
+  judul.className = "kartu_judul";
+
+  const tombolFav = document.createElement("button");
+  tombolFav.type = "button";
+  tombolFav.className = "favorit";
+  tombolFav.dataset.id = buku.id;
+  tombolFav.style.background = "transparent";
+  tombolFav.style.border = "none";
+  tombolFav.style.fontSize = "1.2rem";
+  tombolFav.style.cursor = "pointer";
+  tombolFav.textContent = favorit.includes(buku.id) ? "★" : "☆";
+
+  headerKartu.append(judul, tombolFav);
+  kartu.appendChild(headerKartu);
 
   if (buku.gambar) {
     const gambarBuku = document.createElement("img");
@@ -44,8 +61,7 @@ function buatKartu(buku) {
   return kartu;
 }
 
-// 2. Rendering Tabel Daftar Buku
-function renderTabel(daftar = []) {
+export function renderTabel(daftar = []) {
   if (!wadahTabel) return;
   wadahTabel.replaceChildren(
     ...daftar.map((buku, indeks) => {
@@ -57,23 +73,37 @@ function renderTabel(daftar = []) {
         buku.tahun,
         `${buku.rating}/10`,
       ];
-
       baris.append(...nilai.map((item) => buatElemen("td", item)));
       return baris;
     }),
   );
 }
 
-// 3. Rendering Kartu Koleksi Buku Berdasarkan Filter
-function terapkanFilter() {
+export function tandaiTombolAktif(kategoriAktif) {
+  if (!filter) return;
+  filter.querySelectorAll("button[data-kategori]").forEach((item) => {
+    const aktif = item.dataset.kategori === kategoriAktif;
+    item.classList.toggle("aktif", aktif);
+    item.setAttribute("aria-pressed", String(aktif));
+  });
+}
+
+export function aturMemuat(sedangMemuat) {
+  if (muatPesan) muatPesan.hidden = !sedangMemuat;
+}
+
+export function tampilkanGalat(pesan) {
+  if (wadahDaftar) wadahDaftar.textContent = pesan;
+}
+
+export function render(state) {
+  renderTabel(state.daftarProyek);
+  tandaiTombolAktif(state.kategoriAktif);
+
   if (!wadahDaftar) return;
-
-  const terfilter =
-    kategoriAktif === "semua"
-      ? dataSemuaBuku
-      : dataSemuaBuku.filter((buku) => buku.penulis === kategoriAktif);
-
   wadahDaftar.textContent = "";
+
+  const terfilter = saring(state.daftarProyek, state.kategoriAktif);
 
   if (!terfilter || terfilter.length === 0) {
     if (pesanKosong) {
@@ -86,42 +116,6 @@ function terapkanFilter() {
   if (pesanKosong) pesanKosong.hidden = true;
 
   terfilter.forEach((buku) => {
-    wadahDaftar.append(buatKartu(buku));
+    wadahDaftar.append(buatKartu(buku, state.favorit));
   });
-}
-
-// 4. Listener Klik Tombol Filter
-if (filter) {
-  filter.addEventListener("click", (event) => {
-    const tombol = event.target.closest("button[data-kategori]");
-    if (!tombol || !filter.contains(tombol)) return;
-
-    kategoriAktif = tombol.dataset.kategori;
-    filter.querySelectorAll("button[data-kategori]").forEach((item) => {
-      const aktif = item === tombol;
-      item.classList.toggle("aktif", aktif);
-      item.setAttribute("aria-pressed", String(aktif));
-    });
-
-    terapkanFilter();
-  });
-}
-
-// 5. Fungsi Ekspor untuk Lembar D
-export function aturMemuat(sedangMemuat) {
-  if (muatPesan) {
-    muatPesan.hidden = !sedangMemuat;
-  }
-}
-
-export function tampilkanGalat(pesan) {
-  if (wadahDaftar) {
-    wadahDaftar.textContent = pesan;
-  }
-}
-
-export function render(daftar = []) {
-  dataSemuaBuku = daftar; // Simpan data dari API
-  renderTabel(daftar); // Tampilkan di tabel
-  terapkanFilter(); // Tampilkan di kartu koleksi
 }
