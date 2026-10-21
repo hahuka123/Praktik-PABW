@@ -25,14 +25,18 @@ export function buatKartu(buku, favorit = []) {
   judul.className = "kartu_judul";
 
   const tombolFav = document.createElement("button");
+  const isFavorit = favorit.includes(buku.id);
   tombolFav.type = "button";
   tombolFav.className = "favorit";
   tombolFav.dataset.id = buku.id;
-  tombolFav.style.background = "transparent";
-  tombolFav.style.border = "none";
-  tombolFav.style.fontSize = "1.2rem";
-  tombolFav.style.cursor = "pointer";
-  tombolFav.textContent = favorit.includes(buku.id) ? "★" : "☆";
+  tombolFav.setAttribute("aria-pressed", String(isFavorit));
+  tombolFav.setAttribute(
+    "aria-label",
+    `${isFavorit ? "Hapus" : "Simpan"} ${buku.judul} ${
+      isFavorit ? "dari" : "ke"
+    } favorit`,
+  );
+  tombolFav.textContent = isFavorit ? "★" : "☆";
 
   headerKartu.append(judul, tombolFav);
   kartu.appendChild(headerKartu);
