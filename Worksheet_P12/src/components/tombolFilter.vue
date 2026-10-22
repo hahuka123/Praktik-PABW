@@ -1,5 +1,4 @@
 <script setup>
-import { state, ref } from 'vue'<script setup>
 import { state, pilihKategori } from '../state.js'
 
 const daftarKategori = ['semua', 'web', 'mobile', 'desain']
