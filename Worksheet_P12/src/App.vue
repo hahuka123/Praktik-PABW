@@ -1,7 +1,7 @@
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
+import { profil } from './data.js'
 </script>
 
 <template>
-  <HelloWorld />
+  <kepala-profil :profil="profil" />
 </template>
