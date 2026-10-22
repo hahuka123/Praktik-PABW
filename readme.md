@@ -54,3 +54,11 @@ menggunakan AI untuk mengecek kode apakah sudah valid atau belum
 
 ## Worksheet_P11 - state.js, events.js, data.js, dan perapihan file yang ada di folder js
 menggunakan AI untuk menganalisis dan menyusun format kode
+
+
+## Worksheet P12
+# Catatan penggunaan AI
+Copilot digunakan untuk membantu porting halaman P11 ke komponen Vue,
+menyambungkan state reaktif dan penyimpanan, memperbaiki jalur data/gambar, dan
+memeriksa build serta perilaku halaman. Tinjau dan sesuaikan catatan ini agar
+mencerminkan bagian yang Anda kerjakan sendiri sebelum menyerahkan tugas.
